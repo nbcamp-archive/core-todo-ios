@@ -17,6 +17,7 @@
 		1C56ABA92AB2CFD80040B789 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C56ABA42AB2CFD80040B789 /* Assets.xcassets */; };
 		1C56ABAA2AB2CFD80040B789 /* CoreTodo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABA52AB2CFD80040B789 /* CoreTodo.xcdatamodeld */; };
 		1C56ABAD2AB2D2000040B789 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C56ABAC2AB2D2000040B789 /* LaunchScreen.storyboard */; };
+		1C56ABAF2AB2E0700040B789 /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABAE2AB2E0700040B789 /* StringLiterals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		1C56ABA62AB2CFD80040B789 /* CoreTodo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreTodo.xcdatamodel; sourceTree = "<group>"; };
 		1C56ABA72AB2CFD80040B789 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C56ABAC2AB2D2000040B789 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1C56ABAE2AB2E0700040B789 /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				1C56AB8D2AB2A6520040B789 /* Coordinator.swift */,
+				1C56ABAE2AB2E0700040B789 /* StringLiterals.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C56ABAF2AB2E0700040B789 /* StringLiterals.swift in Sources */,
 				1C56AB8A2AB2A4010040B789 /* AppDelegate.swift in Sources */,
 				1C56ABAA2AB2CFD80040B789 /* CoreTodo.xcdatamodeld in Sources */,
 				1C56AB8E2AB2A6520040B789 /* Coordinator.swift in Sources */,
