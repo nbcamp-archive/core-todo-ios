@@ -10,26 +10,23 @@ import Then
 import UIKit
 
 final class IGProfileDesignViewController: UIViewController, UIViewControllerConfigurable {
-    // MARK: UI 컴포넌트
     private lazy var usernameLabel: UILabel = .init().then({
         $0.text = StringLiterals.kUserName
         $0.textAlignment = .center
         $0.font = UIFont.boldSystemFont(ofSize: 16)
     })
     
-    private lazy var hamburgerMenu: UIImageView = .init(image: UIImage(named: ""))
+    private lazy var menu: UIImageView = .init().then({
+        $0.frame = .zero
+        $0.clipsToBounds = true
+        $0.image = UIImage(named: "Three_Dots_Image")
+        $0.contentMode = .scaleAspectFit
+    })
     
     private lazy var middleBarHorizontalStackView = MiddleBarHorizontalStackView()
     
-    private lazy var userPictureView: UIView = .init().then({
-        $0.frame = CGRect(x: 0, y: 0, width: 88, height: 88)
-        $0.layer.cornerRadius = CGFloat(44.0)
-        $0.clipsToBounds = true
-        $0.backgroundColor = .red
-    })
-    
     private lazy var userPicture: UIImageView = .init().then({
-        $0.frame = CGRect(x: 0, y: 0, width: 88, height: 88)
+        $0.frame = .zero
         $0.layer.cornerRadius = CGFloat(44.0)
         $0.clipsToBounds = true
         $0.image = UIImage(named: "MyongE_Skrr_Image")
@@ -37,14 +34,14 @@ final class IGProfileDesignViewController: UIViewController, UIViewControllerCon
     })
     
     private lazy var userFollowHorizontalStackView: UIStackView = .init(arrangedSubviews: [
-        userPictureView,
         postLabel,
         followerLabel,
         followingLabel
     ]).then({
         $0.axis = .horizontal
         $0.spacing = CGFloat(28)
-        $0.alignment = .leading
+        $0.distribution = .equalSpacing
+        $0.alignment = .center
     })
     
     private lazy var userFollowVerticalStackView: UIStackView = .init(arrangedSubviews: [
@@ -57,14 +54,17 @@ final class IGProfileDesignViewController: UIViewController, UIViewControllerCon
     
     private lazy var postLabel: UILabel = .init().then({
         $0.text = StringLiterals.kPosts
+        $0.font = UIFont.boldSystemFont(ofSize: 14)
     })
     
     private lazy var followerLabel: UILabel = .init().then({
         $0.text = StringLiterals.kFollowers
+        $0.font = UIFont.boldSystemFont(ofSize: 14)
     })
     
     private lazy var followingLabel: UILabel = .init().then({
         $0.text = StringLiterals.kFollowing
+        $0.font = UIFont.boldSystemFont(ofSize: 14)
     })
     
     private lazy var userInfoVerticalStackView: UIStackView = .init(arrangedSubviews: [
@@ -104,6 +104,8 @@ final class IGProfileDesignViewController: UIViewController, UIViewControllerCon
         view.backgroundColor = .white
         view.addSubviews([
             usernameLabel,
+            menu,
+            userPicture,
             userFollowHorizontalStackView,
             userInfoVerticalStackView,
             middleBarHorizontalStackView
@@ -111,16 +113,32 @@ final class IGProfileDesignViewController: UIViewController, UIViewControllerCon
     }
     
     func setLayout() {
-        usernameLabel.snp.makeConstraints { constraint in
+        usernameLabel.snp.makeConstraints({ constraint in
             constraint.top.equalToSuperview()
-            constraint.leading.trailing.equalToSuperview()
-        }
-        userFollowHorizontalStackView.snp.makeConstraints { constraint in
+            constraint.centerX.equalToSuperview()
+            constraint.height.equalTo(30)
+        })
+        menu.snp.makeConstraints({ constraint in
+            constraint.top.equalToSuperview()
+            constraint.trailingMargin.equalToSuperview()
+            constraint.width.equalTo(60)
+            constraint.height.equalTo(30)
+            constraint.leading.equalTo(usernameLabel.snp.trailing).offset(20)
+        })
+        userPicture.snp.makeConstraints({ constraint in
             constraint.top.equalTo(usernameLabel.snp.bottom)
-            constraint.leading.leadingMargin.equalToSuperview()
-        }
+            constraint.leadingMargin.equalToSuperview()
+            constraint.width.height.equalTo(88)
+            constraint.bottomMargin.equalTo(userInfoVerticalStackView.snp.topMargin).offset(-40)
+        })
+        userFollowHorizontalStackView.snp.makeConstraints({ constraint in
+            constraint.top.equalTo(usernameLabel.snp.bottom)
+            constraint.leadingMargin.equalTo(userPicture.snp.trailingMargin).offset(60)
+            constraint.trailingMargin.equalToSuperview().offset(-28)
+            constraint.height.equalTo(88)
+        })
         userInfoVerticalStackView.snp.makeConstraints { constraint in
-            constraint.topMargin.equalTo(userFollowHorizontalStackView.snp.bottom)
+            constraint.topMargin.equalTo(userFollowHorizontalStackView.snp.bottom).offset(20)
             constraint.leadingMargin.equalToSuperview()
             constraint.trailingMargin.equalToSuperview()
         }

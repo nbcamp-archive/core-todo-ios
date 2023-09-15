@@ -13,7 +13,7 @@
 		1C56AB8A2AB2A4010040B789 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56AB882AB2A4010040B789 /* AppDelegate.swift */; };
 		1C56AB8B2AB2A4010040B789 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56AB892AB2A4010040B789 /* SceneDelegate.swift */; };
 		1C56AB8E2AB2A6520040B789 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56AB8D2AB2A6520040B789 /* Coordinator.swift */; };
-		1C56AB9E2AB2A8940040B789 /* IGProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56AB9D2AB2A8940040B789 /* IGProfileViewController.swift */; };
+		1C56AB9E2AB2A8940040B789 /* IGProfileDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56AB9D2AB2A8940040B789 /* IGProfileDesignViewController.swift */; };
 		1C56ABA92AB2CFD80040B789 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C56ABA42AB2CFD80040B789 /* Assets.xcassets */; };
 		1C56ABAA2AB2CFD80040B789 /* CoreTodo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABA52AB2CFD80040B789 /* CoreTodo.xcdatamodeld */; };
 		1C56ABAD2AB2D2000040B789 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C56ABAC2AB2D2000040B789 /* LaunchScreen.storyboard */; };
@@ -22,6 +22,10 @@
 		1C56ABB72AB3F38D0040B789 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 1C56ABB62AB3F38D0040B789 /* Then */; };
 		1C56ABBF2AB41A6A0040B789 /* UIColor+Hexadecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABBE2AB41A6A0040B789 /* UIColor+Hexadecimal.swift */; };
 		1C56ABC52AB41D260040B789 /* UIViewControllerConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABC42AB41D260040B789 /* UIViewControllerConfigurable.swift */; };
+		1C56ABCA2AB44A840040B789 /* UIStackViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABC92AB44A840040B789 /* UIStackViewConfigurable.swift */; };
+		1C56ABCE2AB44E4A0040B789 /* UIStackView+AddArrangedSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABCD2AB44E4A0040B789 /* UIStackView+AddArrangedSubviews.swift */; };
+		1C56ABD02AB454D80040B789 /* UIView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABCF2AB454D80040B789 /* UIView+AddSubviews.swift */; };
+		1C56ABD62AB456B70040B789 /* MiddleBarHorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABD52AB456B70040B789 /* MiddleBarHorizontalStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +55,7 @@
 		1C56AB882AB2A4010040B789 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C56AB892AB2A4010040B789 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1C56AB8D2AB2A6520040B789 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		1C56AB9D2AB2A8940040B789 /* IGProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGProfileViewController.swift; sourceTree = "<group>"; };
+		1C56AB9D2AB2A8940040B789 /* IGProfileDesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGProfileDesignViewController.swift; sourceTree = "<group>"; };
 		1C56ABA42AB2CFD80040B789 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C56ABA62AB2CFD80040B789 /* CoreTodo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreTodo.xcdatamodel; sourceTree = "<group>"; };
 		1C56ABA72AB2CFD80040B789 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +63,10 @@
 		1C56ABAE2AB2E0700040B789 /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		1C56ABBE2AB41A6A0040B789 /* UIColor+Hexadecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hexadecimal.swift"; sourceTree = "<group>"; };
 		1C56ABC42AB41D260040B789 /* UIViewControllerConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerConfigurable.swift; sourceTree = "<group>"; };
+		1C56ABC92AB44A840040B789 /* UIStackViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewConfigurable.swift; sourceTree = "<group>"; };
+		1C56ABCD2AB44E4A0040B789 /* UIStackView+AddArrangedSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+AddArrangedSubviews.swift"; sourceTree = "<group>"; };
+		1C56ABCF2AB454D80040B789 /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
+		1C56ABD52AB456B70040B789 /* MiddleBarHorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleBarHorizontalStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +166,7 @@
 		1C56AB9A2AB2A7B30040B789 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				1C56AB9D2AB2A8940040B789 /* IGProfileViewController.swift */,
+				1C56ABC62AB449DD0040B789 /* IGProfileDesignView */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -187,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				1C56ABBE2AB41A6A0040B789 /* UIColor+Hexadecimal.swift */,
+				1C56ABCD2AB44E4A0040B789 /* UIStackView+AddArrangedSubviews.swift */,
+				1C56ABCF2AB454D80040B789 /* UIView+AddSubviews.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -195,8 +205,34 @@
 			isa = PBXGroup;
 			children = (
 				1C56ABC42AB41D260040B789 /* UIViewControllerConfigurable.swift */,
+				1C56ABC92AB44A840040B789 /* UIStackViewConfigurable.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		1C56ABC62AB449DD0040B789 /* IGProfileDesignView */ = {
+			isa = PBXGroup;
+			children = (
+				1C56ABD22AB4564D0040B789 /* Component */,
+				1C56ABD12AB455FF0040B789 /* View */,
+			);
+			path = IGProfileDesignView;
+			sourceTree = "<group>";
+		};
+		1C56ABD12AB455FF0040B789 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1C56AB9D2AB2A8940040B789 /* IGProfileDesignViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1C56ABD22AB4564D0040B789 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				1C56ABD52AB456B70040B789 /* MiddleBarHorizontalStackView.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,9 +401,13 @@
 				1C56AB8A2AB2A4010040B789 /* AppDelegate.swift in Sources */,
 				1C56ABAA2AB2CFD80040B789 /* CoreTodo.xcdatamodeld in Sources */,
 				1C56AB8E2AB2A6520040B789 /* Coordinator.swift in Sources */,
+				1C56ABD02AB454D80040B789 /* UIView+AddSubviews.swift in Sources */,
+				1C56ABCA2AB44A840040B789 /* UIStackViewConfigurable.swift in Sources */,
+				1C56ABCE2AB44E4A0040B789 /* UIStackView+AddArrangedSubviews.swift in Sources */,
 				1C56ABBF2AB41A6A0040B789 /* UIColor+Hexadecimal.swift in Sources */,
+				1C56ABD62AB456B70040B789 /* MiddleBarHorizontalStackView.swift in Sources */,
 				1C56AB8B2AB2A4010040B789 /* SceneDelegate.swift in Sources */,
-				1C56AB9E2AB2A8940040B789 /* IGProfileViewController.swift in Sources */,
+				1C56AB9E2AB2A8940040B789 /* IGProfileDesignViewController.swift in Sources */,
 				1C56ABC52AB41D260040B789 /* UIViewControllerConfigurable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
