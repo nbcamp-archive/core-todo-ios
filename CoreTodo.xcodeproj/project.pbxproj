@@ -157,7 +157,6 @@
 		1C56AB8C2AB2A6420040B789 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				1C56AB8D2AB2A6520040B789 /* Coordinator.swift */,
 				1C56ABAE2AB2E0700040B789 /* StringLiterals.swift */,
 			);
 			path = Utility;
@@ -206,6 +205,7 @@
 			children = (
 				1C56ABC42AB41D260040B789 /* UIViewControllerConfigurable.swift */,
 				1C56ABC92AB44A840040B789 /* UIStackViewConfigurable.swift */,
+				1C56AB8D2AB2A6520040B789 /* Coordinator.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
