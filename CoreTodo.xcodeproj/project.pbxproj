@@ -20,6 +20,7 @@
 		1C56ABAF2AB2E0700040B789 /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABAE2AB2E0700040B789 /* StringLiterals.swift */; };
 		1C56ABB42AB3F3750040B789 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1C56ABB32AB3F3750040B789 /* SnapKit */; };
 		1C56ABB72AB3F38D0040B789 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 1C56ABB62AB3F38D0040B789 /* Then */; };
+		1C56ABBF2AB41A6A0040B789 /* UIColor+Hexadecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABBE2AB41A6A0040B789 /* UIColor+Hexadecimal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		1C56ABA72AB2CFD80040B789 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C56ABAC2AB2D2000040B789 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C56ABAE2AB2E0700040B789 /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
+		1C56ABBE2AB41A6A0040B789 /* UIColor+Hexadecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hexadecimal.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +109,7 @@
 		1C56AB4D2AB2A19C0040B789 /* CoreTodo */ = {
 			isa = PBXGroup;
 			children = (
-				1C56ABB82AB401930040B789 /* Global */,
+				1C56ABBC2AB41A590040B789 /* Global */,
 				1C56ABA12AB2CFD80040B789 /* Resource */,
 				1C56AB9A2AB2A7B30040B789 /* Presentation */,
 				1C56AB8C2AB2A6420040B789 /* Utility */,
@@ -170,17 +172,18 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		1C56ABB82AB401930040B789 /* Global */ = {
+		1C56ABBC2AB41A590040B789 /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				1C56ABB92AB402080040B789 /* Extension */,
+				1C56ABBD2AB41A590040B789 /* Extension */,
 			);
 			path = Global;
 			sourceTree = "<group>";
 		};
-		1C56ABB92AB402080040B789 /* Extension */ = {
+		1C56ABBD2AB41A590040B789 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				1C56ABBE2AB41A6A0040B789 /* UIColor+Hexadecimal.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				1C56AB8A2AB2A4010040B789 /* AppDelegate.swift in Sources */,
 				1C56ABAA2AB2CFD80040B789 /* CoreTodo.xcdatamodeld in Sources */,
 				1C56AB8E2AB2A6520040B789 /* Coordinator.swift in Sources */,
+				1C56ABBF2AB41A6A0040B789 /* UIColor+Hexadecimal.swift in Sources */,
 				1C56AB8B2AB2A4010040B789 /* SceneDelegate.swift in Sources */,
 				1C56AB9E2AB2A8940040B789 /* IGProfileViewController.swift in Sources */,
 			);
