@@ -1,0 +1,11 @@
+# By default, SwiftLint uses a set of sensible default rules you can adjust:
+disabled_rules: # rule identifiers turned on by default to exclude from running
+  - trailing_whitespace
+  - control_statement
+  
+included:
+  - CoreTodo
+  
+excluded:
+  - CoreTodo/Application/AppDelegate.swift
+  - CoreTodo/Application/SceneDelegate.swift
