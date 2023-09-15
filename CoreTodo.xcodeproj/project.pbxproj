@@ -18,6 +18,8 @@
 		1C56ABAA2AB2CFD80040B789 /* CoreTodo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABA52AB2CFD80040B789 /* CoreTodo.xcdatamodeld */; };
 		1C56ABAD2AB2D2000040B789 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C56ABAC2AB2D2000040B789 /* LaunchScreen.storyboard */; };
 		1C56ABAF2AB2E0700040B789 /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABAE2AB2E0700040B789 /* StringLiterals.swift */; };
+		1C56ABB42AB3F3750040B789 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1C56ABB32AB3F3750040B789 /* SnapKit */; };
+		1C56ABB72AB3F38D0040B789 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 1C56ABB62AB3F38D0040B789 /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C56ABB42AB3F3750040B789 /* SnapKit in Frameworks */,
+				1C56ABB72AB3F38D0040B789 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +107,7 @@
 		1C56AB4D2AB2A19C0040B789 /* CoreTodo */ = {
 			isa = PBXGroup;
 			children = (
+				1C56ABB82AB401930040B789 /* Global */,
 				1C56ABA12AB2CFD80040B789 /* Resource */,
 				1C56AB9A2AB2A7B30040B789 /* Presentation */,
 				1C56AB8C2AB2A6420040B789 /* Utility */,
@@ -165,6 +170,21 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		1C56ABB82AB401930040B789 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				1C56ABB92AB402080040B789 /* Extension */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		1C56ABB92AB402080040B789 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,6 +202,10 @@
 			dependencies = (
 			);
 			name = CoreTodo;
+			packageProductDependencies = (
+				1C56ABB32AB3F3750040B789 /* SnapKit */,
+				1C56ABB62AB3F38D0040B789 /* Then */,
+			);
 			productName = CoreTodo;
 			productReference = 1C56AB4B2AB2A19C0040B789 /* CoreTodo.app */;
 			productType = "com.apple.product-type.application";
@@ -255,6 +279,10 @@
 				Launch,
 			);
 			mainGroup = 1C56AB422AB2A19B0040B789;
+			packageReferences = (
+				1C56ABB22AB3F3750040B789 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1C56ABB52AB3F38D0040B789 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = 1C56AB4C2AB2A19C0040B789 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -647,6 +675,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1C56ABB22AB3F3750040B789 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		1C56ABB52AB3F38D0040B789 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1C56ABB32AB3F3750040B789 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C56ABB22AB3F3750040B789 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		1C56ABB62AB3F38D0040B789 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C56ABB52AB3F38D0040B789 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		1C56ABA52AB2CFD80040B789 /* CoreTodo.xcdatamodeld */ = {
