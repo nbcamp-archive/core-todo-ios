@@ -26,7 +26,7 @@
 		1C56ABCE2AB44E4A0040B789 /* UIStackView+AddArrangedSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABCD2AB44E4A0040B789 /* UIStackView+AddArrangedSubviews.swift */; };
 		1C56ABD02AB454D80040B789 /* UIView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABCF2AB454D80040B789 /* UIView+AddSubviews.swift */; };
 		1C56ABD62AB456B70040B789 /* MiddleBarHorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABD52AB456B70040B789 /* MiddleBarHorizontalStackView.swift */; };
-		1C56ABD82AB4AA060040B789 /* UserFollowHorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABD72AB4AA060040B789 /* UserFollowHorizontalStackView.swift */; };
+		1C56ABD82AB4AA060040B789 /* UserFollowInfoHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABD72AB4AA060040B789 /* UserFollowInfoHStackView.swift */; };
 		1C56ABDC2AB4AAB00040B789 /* UserInfoVerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABDB2AB4AAB00040B789 /* UserInfoVerticalStackView.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +69,7 @@
 		1C56ABCD2AB44E4A0040B789 /* UIStackView+AddArrangedSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+AddArrangedSubviews.swift"; sourceTree = "<group>"; };
 		1C56ABCF2AB454D80040B789 /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
 		1C56ABD52AB456B70040B789 /* MiddleBarHorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleBarHorizontalStackView.swift; sourceTree = "<group>"; };
-		1C56ABD72AB4AA060040B789 /* UserFollowHorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowHorizontalStackView.swift; sourceTree = "<group>"; };
+		1C56ABD72AB4AA060040B789 /* UserFollowInfoHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowInfoHStackView.swift; sourceTree = "<group>"; };
 		1C56ABDB2AB4AAB00040B789 /* UserInfoVerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVerticalStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,7 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				1C56ABD52AB456B70040B789 /* MiddleBarHorizontalStackView.swift */,
-				1C56ABD72AB4AA060040B789 /* UserFollowHorizontalStackView.swift */,
+				1C56ABD72AB4AA060040B789 /* UserFollowInfoHStackView.swift */,
 				1C56ABDB2AB4AAB00040B789 /* UserInfoVerticalStackView.swift */,
 			);
 			path = Component;
@@ -416,7 +416,7 @@
 				1C56AB8B2AB2A4010040B789 /* SceneDelegate.swift in Sources */,
 				1C56AB9E2AB2A8940040B789 /* IGProfileDesignViewController.swift in Sources */,
 				1C56ABC52AB41D260040B789 /* UIViewControllerConfigurable.swift in Sources */,
-				1C56ABD82AB4AA060040B789 /* UserFollowHorizontalStackView.swift in Sources */,
+				1C56ABD82AB4AA060040B789 /* UserFollowInfoHStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
