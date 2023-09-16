@@ -9,7 +9,7 @@ import SnapKit
 import Then
 import UIKit
 
-final class IGProfileDesignViewController: UIViewController, UIViewControllerConfigurable {
+final class IGProfileDesignViewController: UIViewController {
     private lazy var usernameLabel: UILabel = .init().then({
         $0.text = StringLiterals.kUserName
         $0.textAlignment = .center
@@ -33,39 +33,7 @@ final class IGProfileDesignViewController: UIViewController, UIViewControllerCon
         $0.contentMode = .scaleAspectFit
     })
     
-    private lazy var userFollowHorizontalStackView: UIStackView = .init(arrangedSubviews: [
-        postLabel,
-        followerLabel,
-        followingLabel
-    ]).then({
-        $0.axis = .horizontal
-        $0.spacing = CGFloat(28)
-        $0.distribution = .equalSpacing
-        $0.alignment = .center
-    })
-    
-    private lazy var userFollowVerticalStackView: UIStackView = .init(arrangedSubviews: [
-        
-    ]).then({
-        $0.axis = .vertical
-        $0.spacing = CGFloat(2)
-        $0.alignment = .center
-    })
-    
-    private lazy var postLabel: UILabel = .init().then({
-        $0.text = StringLiterals.kPosts
-        $0.font = UIFont.boldSystemFont(ofSize: 14)
-    })
-    
-    private lazy var followerLabel: UILabel = .init().then({
-        $0.text = StringLiterals.kFollowers
-        $0.font = UIFont.boldSystemFont(ofSize: 14)
-    })
-    
-    private lazy var followingLabel: UILabel = .init().then({
-        $0.text = StringLiterals.kFollowing
-        $0.font = UIFont.boldSystemFont(ofSize: 14)
-    })
+    private lazy var userFollowInfoVStackView = UserFollowInfoHStackView()
     
     private lazy var userInfoVerticalStackView: UIStackView = .init(arrangedSubviews: [
         nameLabel,
@@ -98,15 +66,16 @@ final class IGProfileDesignViewController: UIViewController, UIViewControllerCon
         setUI()
         setLayout()
     }
-    
+}
+
+extension IGProfileDesignViewController: UIViewControllerConfigurable {
     func setUI() {
-        title = "username"
         view.backgroundColor = .white
         view.addSubviews([
             usernameLabel,
             menu,
             userPicture,
-            userFollowHorizontalStackView,
+            userFollowInfoVStackView,
             userInfoVerticalStackView,
             middleBarHorizontalStackView
         ])
@@ -131,17 +100,17 @@ final class IGProfileDesignViewController: UIViewController, UIViewControllerCon
             constraint.width.height.equalTo(88)
             constraint.bottomMargin.equalTo(userInfoVerticalStackView.snp.topMargin).offset(-40)
         })
-        userFollowHorizontalStackView.snp.makeConstraints({ constraint in
+        userFollowInfoVStackView.snp.makeConstraints({ constraint in
             constraint.top.equalTo(usernameLabel.snp.bottom)
             constraint.leadingMargin.equalTo(userPicture.snp.trailingMargin).offset(60)
             constraint.trailingMargin.equalToSuperview().offset(-28)
             constraint.height.equalTo(88)
         })
-        userInfoVerticalStackView.snp.makeConstraints { constraint in
-            constraint.topMargin.equalTo(userFollowHorizontalStackView.snp.bottom).offset(20)
+        userInfoVerticalStackView.snp.makeConstraints({ constraint in
+            constraint.topMargin.equalTo(userFollowInfoVStackView.snp.bottom).offset(20)
             constraint.leadingMargin.equalToSuperview()
             constraint.trailingMargin.equalToSuperview()
-        }
+        })
         middleBarHorizontalStackView.snp.makeConstraints({ constraint in
             constraint.topMargin.equalTo(userInfoVerticalStackView.snp.bottom).offset(16)
             constraint.leadingMargin.trailingMargin.equalToSuperview()
