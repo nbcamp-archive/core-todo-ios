@@ -23,8 +23,6 @@ final class IGProfileDesignViewController: UIViewController {
         $0.contentMode = .scaleAspectFit
     })
     
-    private lazy var middleBarHorizontalStackView = MiddleBarHorizontalStackView()
-    
     private lazy var userPicture: UIImageView = .init().then({
         $0.frame = .zero
         $0.layer.cornerRadius = CGFloat(44.0)
@@ -35,31 +33,9 @@ final class IGProfileDesignViewController: UIViewController {
     
     private lazy var userFollowInfoVStackView = UserFollowInfoHStackView()
     
-    private lazy var userInfoVerticalStackView: UIStackView = .init(arrangedSubviews: [
-        nameLabel,
-        bioLabel,
-        linkInbioLabel
-    ]).then({
-        $0.axis = .vertical
-        $0.spacing = CGFloat(2)
-        $0.alignment = .leading
-    })
+    private lazy var userInfoVStackView = UserInfoVStackView()
     
-    private lazy var nameLabel: UILabel = .init().then({
-        $0.text = StringLiterals.kName
-        $0.font = UIFont.boldSystemFont(ofSize: 14.0)
-    })
-    
-    private lazy var bioLabel: UILabel = .init().then({
-        $0.text = StringLiterals.kBio
-        $0.font = UIFont.systemFont(ofSize: 14.0)
-    })
-    
-    private lazy var linkInbioLabel: UILabel = .init().then({
-        $0.text = StringLiterals.kLinkToBio
-        $0.textColor = .systemBlue
-        $0.font = UIFont.systemFont(ofSize: 14.0)
-    })
+    private lazy var middleBarHorizontalStackView = MiddleBarHorizontalStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +52,7 @@ extension IGProfileDesignViewController: UIViewControllerConfigurable {
             menu,
             userPicture,
             userFollowInfoVStackView,
-            userInfoVerticalStackView,
+            userInfoVStackView,
             middleBarHorizontalStackView
         ])
     }
@@ -98,7 +74,7 @@ extension IGProfileDesignViewController: UIViewControllerConfigurable {
             constraint.top.equalTo(usernameLabel.snp.bottom)
             constraint.leadingMargin.equalToSuperview()
             constraint.width.height.equalTo(88)
-            constraint.bottomMargin.equalTo(userInfoVerticalStackView.snp.topMargin).offset(-40)
+            constraint.bottomMargin.equalTo(userInfoVStackView.snp.topMargin).offset(-40)
         })
         userFollowInfoVStackView.snp.makeConstraints({ constraint in
             constraint.top.equalTo(usernameLabel.snp.bottom)
@@ -106,13 +82,13 @@ extension IGProfileDesignViewController: UIViewControllerConfigurable {
             constraint.trailingMargin.equalToSuperview().offset(-28)
             constraint.height.equalTo(88)
         })
-        userInfoVerticalStackView.snp.makeConstraints({ constraint in
+        userInfoVStackView.snp.makeConstraints({ constraint in
             constraint.topMargin.equalTo(userFollowInfoVStackView.snp.bottom).offset(20)
             constraint.leadingMargin.equalToSuperview()
             constraint.trailingMargin.equalToSuperview()
         })
         middleBarHorizontalStackView.snp.makeConstraints({ constraint in
-            constraint.topMargin.equalTo(userInfoVerticalStackView.snp.bottom).offset(16)
+            constraint.topMargin.equalTo(userInfoVStackView.snp.bottom).offset(16)
             constraint.leadingMargin.trailingMargin.equalToSuperview()
         })
     }

@@ -27,7 +27,7 @@
 		1C56ABD02AB454D80040B789 /* UIView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABCF2AB454D80040B789 /* UIView+AddSubviews.swift */; };
 		1C56ABD62AB456B70040B789 /* MiddleBarHorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABD52AB456B70040B789 /* MiddleBarHorizontalStackView.swift */; };
 		1C56ABD82AB4AA060040B789 /* UserFollowInfoHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABD72AB4AA060040B789 /* UserFollowInfoHStackView.swift */; };
-		1C56ABDC2AB4AAB00040B789 /* UserInfoVerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABDB2AB4AAB00040B789 /* UserInfoVerticalStackView.swift */; };
+		1C56ABDC2AB4AAB00040B789 /* UserInfoVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABDB2AB4AAB00040B789 /* UserInfoVStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +70,7 @@
 		1C56ABCF2AB454D80040B789 /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
 		1C56ABD52AB456B70040B789 /* MiddleBarHorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleBarHorizontalStackView.swift; sourceTree = "<group>"; };
 		1C56ABD72AB4AA060040B789 /* UserFollowInfoHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowInfoHStackView.swift; sourceTree = "<group>"; };
-		1C56ABDB2AB4AAB00040B789 /* UserInfoVerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVerticalStackView.swift; sourceTree = "<group>"; };
+		1C56ABDB2AB4AAB00040B789 /* UserInfoVStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,7 +236,7 @@
 			children = (
 				1C56ABD52AB456B70040B789 /* MiddleBarHorizontalStackView.swift */,
 				1C56ABD72AB4AA060040B789 /* UserFollowInfoHStackView.swift */,
-				1C56ABDB2AB4AAB00040B789 /* UserInfoVerticalStackView.swift */,
+				1C56ABDB2AB4AAB00040B789 /* UserInfoVStackView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -407,7 +407,7 @@
 				1C56AB8A2AB2A4010040B789 /* AppDelegate.swift in Sources */,
 				1C56ABAA2AB2CFD80040B789 /* CoreTodo.xcdatamodeld in Sources */,
 				1C56AB8E2AB2A6520040B789 /* Coordinator.swift in Sources */,
-				1C56ABDC2AB4AAB00040B789 /* UserInfoVerticalStackView.swift in Sources */,
+				1C56ABDC2AB4AAB00040B789 /* UserInfoVStackView.swift in Sources */,
 				1C56ABD02AB454D80040B789 /* UIView+AddSubviews.swift in Sources */,
 				1C56ABCA2AB44A840040B789 /* UIStackViewConfigurable.swift in Sources */,
 				1C56ABCE2AB44E4A0040B789 /* UIStackView+AddArrangedSubviews.swift in Sources */,
