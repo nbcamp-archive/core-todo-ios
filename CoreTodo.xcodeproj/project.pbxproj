@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C465C632AB5ACAB00B27748 /* NavigationBarHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C465C622AB5ACAB00B27748 /* NavigationBarHStackView.swift */; };
 		1C56AB692AB2A19D0040B789 /* CoreTodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56AB682AB2A19D0040B789 /* CoreTodoTests.swift */; };
 		1C56AB732AB2A19D0040B789 /* CoreTodoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56AB722AB2A19D0040B789 /* CoreTodoUITests.swift */; };
 		1C56AB752AB2A19D0040B789 /* CoreTodoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56AB742AB2A19D0040B789 /* CoreTodoUITestsLaunchTests.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C465C622AB5ACAB00B27748 /* NavigationBarHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarHStackView.swift; sourceTree = "<group>"; };
 		1C56AB4B2AB2A19C0040B789 /* CoreTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C56AB642AB2A19C0040B789 /* CoreTodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C56AB682AB2A19D0040B789 /* CoreTodoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTodoTests.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				1C56ABD52AB456B70040B789 /* MiddleBarHorizontalStackView.swift */,
 				1C56ABD72AB4AA060040B789 /* UserFollowInfoHStackView.swift */,
 				1C56ABDB2AB4AAB00040B789 /* UserInfoVStackView.swift */,
+				1C465C622AB5ACAB00B27748 /* NavigationBarHStackView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				1C56ABD62AB456B70040B789 /* MiddleBarHorizontalStackView.swift in Sources */,
 				1C56AB8B2AB2A4010040B789 /* SceneDelegate.swift in Sources */,
 				1C56AB9E2AB2A8940040B789 /* IGProfileDesignViewController.swift in Sources */,
+				1C465C632AB5ACAB00B27748 /* NavigationBarHStackView.swift in Sources */,
 				1C56ABC52AB41D260040B789 /* UIViewControllerConfigurable.swift in Sources */,
 				1C56ABD82AB4AA060040B789 /* UserFollowInfoHStackView.swift in Sources */,
 			);
