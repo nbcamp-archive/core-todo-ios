@@ -37,6 +37,20 @@ final class IGProfileDesignViewController: UIViewController {
     
     private lazy var middleBarHorizontalStackView = MiddleBarHorizontalStackView()
     
+    private lazy var navigationBarHStackView = NavigationBarHStackView()
+    
+    private lazy var photoCollectionViewFlowLayout: UICollectionViewFlowLayout = .init().then({
+        $0.minimumLineSpacing = CGFloat(2)
+        $0.minimumInteritemSpacing = CGFloat(2)
+    })
+    
+    private lazy var photoCollectionView: UICollectionView = .init(frame: .zero, collectionViewLayout: photoCollectionViewFlowLayout).then({
+        $0.backgroundColor = .white
+        $0.register(PhotoCell.self, forCellWithReuseIdentifier: PhotoCell.reuseIdentifier)
+        $0.dataSource = self
+        $0.delegate = self
+    })
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -53,7 +67,9 @@ extension IGProfileDesignViewController: UIViewControllerConfigurable {
             userPicture,
             userFollowInfoVStackView,
             userInfoVStackView,
-            middleBarHorizontalStackView
+            middleBarHorizontalStackView,
+            navigationBarHStackView,
+            photoCollectionView
         ])
     }
     
@@ -91,11 +107,55 @@ extension IGProfileDesignViewController: UIViewControllerConfigurable {
             constraint.topMargin.equalTo(userInfoVStackView.snp.bottom).offset(16)
             constraint.leadingMargin.trailingMargin.equalToSuperview()
         })
+        navigationBarHStackView.snp.makeConstraints({ constraint in
+            constraint.top.equalTo(middleBarHorizontalStackView.snp.bottom).offset(8)
+            constraint.leading.trailing.equalToSuperview()
+            constraint.height.equalTo(50)
+        })
+        photoCollectionView.snp.makeConstraints({ constraint in
+            constraint.top.equalTo(navigationBarHStackView.snp.bottom)
+            constraint.leading.trailing.equalToSuperview()
+            constraint.bottom.equalToSuperview()
+        })
     }
     
     func setDelegate() {}
     
     func addTarget() {}
+}
+
+extension IGProfileDesignViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 12
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCell.reuseIdentifier, for: indexPath)
+        cell.backgroundColor=UIColor.gray
+        
+        return cell
+    }
+}
+
+extension IGProfileDesignViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (view.frame.size.width - 8) / 3
+        let height = width
+        
+        return CGSize(width: width, height: height)
+    }
+}
+
+class PhotoCell: UICollectionViewCell {
+    static let reuseIdentifier = "PhotoCell"
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = .gray
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 }
 
 #if DEBUG && canImport(SwiftUI)
