@@ -1,0 +1,63 @@
+#!/bin/sh
+
+# swiftlint
+LINT=$(which swiftlint)
+
+if [[ -e "${LINT}" ]]; then
+	echo "SwiftLint를 시작합니다."
+else
+	echo "SwiftLint가 존재하지 않습니다. 자동으로 설치를 시도합니다."
+	brew install swiftlint
+	if [[ $? != 0 ]]; then
+		echo "SwiftLint 설치에 실패했습니다. Homebrew가 설치되어 있는지 확인하세요."
+		echo "$(brew install swiftlint) 명령어를 통해 수동으로 설치해주세요."
+		exit 1
+	fi
+	LINT=$(which swiftlint)
+fi
+
+FILES=$(git diff --stat --cached)
+TARGETS=$(git diff --stat --cached --diff-filter=d --name-only $(git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)) | grep -F ".swift")
+
+if [ -n "$FILES" -a -z "$TARGETS" ]; then
+	printf "No Swift Files Changed"
+	exit 0
+
+elif [ -z "${FILES}" ]; then
+	printf "No Files Changed"
+	printf "\n $(git add) 명령어를 먼저 진행해주세요."
+	exit 1
+
+elif [ -z "${TARGETS}" ]; then
+	printf "No Swift Files Changed"
+	printf "\n $(git add) 명령어를 먼저 진행해주세요."
+	exit 1
+fi
+
+# swiftlint apply custom rules
+RESULTS=$($LINT lint --quiet --config .swiftlint.yml)
+
+if [ "$RESULTS" == ""]; then
+	printf "SwiftLint: No Warnings\n"
+	exit 0
+else
+	echo ""
+	printf "SwiftLint 검사를 통과하지 못했습니다. 아래 내용을 확인해주세요.\n"
+	echo "$RESULTS" | while read -r line; do
+		FILEPATH=$(echo "$line" | cut -d : -f 1)                # line 변수에 저장된 문자열 중 : 기준으로 첫번째 문자열을 저장(파일 경로)
+		L=$(echo "$line" | cut -d : -f 2)                       # line 변수에 저장된 문자열 중 : 기준으로 두번째 문자열을 저장(행 번호)
+		C=$(echo "$line" | cut -d : -f 3)                       # line 변수에 저장된 문자열 중 : 기준으로 세번째 문자열을 저장(열 번호)
+		TYPE=$(echo "$line" | cut -d : -f 4 | cut -c 2-)        # line 변수에 저장된 문자열 중 : 기준으로 네번째 문자열을 저장(타입)
+		MESSAGE=$(echo "$line" | cut -d : -f 5 | cut -c 2-)     # line 변수에 저장된 문자열 중 : 기준으로 다섯번째 문자열을 저장(메시지)
+		DESCRIPTION=$(echo "$line" | cut -d : -f 6 | cut -c 2-) # line 변수에 저장된 문자열 중 : 기준으로 여섯번째 문자열을 저장(설명)
+		if [ $TYPE == "warning" ]; then
+			printf "\033[0;33m$TYPE ⚠️\033[0m\n"
+		elif [ $TYPE == "error" ]; then
+			printf "\033[0;31m$TYPE ❌ \033[0m\n"
+		fi
+		printf "$FILEPATH:$L:$C\n"
+		printf "$MESSAGE: - $DESCRIPTION\n"
+	done
+	printf "\n 커밋을 진행할 수 없습니다. SwiftLint 검사를 통과해주세요.\n"
+	exit 1
+fi
