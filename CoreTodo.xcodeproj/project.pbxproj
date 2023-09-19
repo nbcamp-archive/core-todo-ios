@@ -32,6 +32,7 @@
 		1C5BB6E42AB937220033B6C8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6E32AB937220033B6C8 /* AppCoordinator.swift */; };
 		1C5BB6E72AB948510033B6C8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6E62AB948510033B6C8 /* HomeViewController.swift */; };
 		1C5BB6E92AB948ED0033B6C8 /* HomeViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6E82AB948ED0033B6C8 /* HomeViewCoordinator.swift */; };
+		1C5BB6EE2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6ED2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		1C5BB6E32AB937220033B6C8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		1C5BB6E62AB948510033B6C8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1C5BB6E82AB948ED0033B6C8 /* HomeViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCoordinator.swift; sourceTree = "<group>"; };
+		1C5BB6ED2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAAnimationGradientLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,10 +257,19 @@
 		1C5BB6E52AB948410033B6C8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1C5BB6EC2AB9B7E50033B6C8 /* Component */,
 				1C5BB6E62AB948510033B6C8 /* HomeViewController.swift */,
 				1C5BB6E82AB948ED0033B6C8 /* HomeViewCoordinator.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		1C5BB6EC2AB9B7E50033B6C8 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				1C5BB6ED2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,6 +451,7 @@
 				1C56AB9E2AB2A8940040B789 /* IGProfileDesignViewController.swift in Sources */,
 				1C465C632AB5ACAB00B27748 /* NavigationBarHStackView.swift in Sources */,
 				1C56ABC52AB41D260040B789 /* UIViewControllerConfigurable.swift in Sources */,
+				1C5BB6EE2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift in Sources */,
 				1C56ABD82AB4AA060040B789 /* UserFollowInfoHStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
