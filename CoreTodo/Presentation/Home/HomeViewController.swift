@@ -11,6 +11,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    weak var coordinator: HomeViewCoordinator?
+    
     private lazy var homeViewLabel: UILabel = .init().then({
         $0.text = "홈 화면"
         $0.font = UIFont.systemFont(ofSize: 22)
