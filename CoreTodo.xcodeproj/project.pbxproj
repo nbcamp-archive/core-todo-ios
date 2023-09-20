@@ -35,6 +35,7 @@
 		1C5BB6EE2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6ED2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift */; };
 		1C5BB6F92ABAEACD0033B6C8 /* TaskGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6F82ABAEACD0033B6C8 /* TaskGroupViewController.swift */; };
 		1C5BB6FD2ABAEB700033B6C8 /* TaskGroupViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6FC2ABAEB700033B6C8 /* TaskGroupViewCoordinator.swift */; };
+		1C5BB6FF2ABB17BF0033B6C8 /* NavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6FE2ABB17BF0033B6C8 /* NavigationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		1C5BB6ED2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAAnimationGradientLayer.swift; sourceTree = "<group>"; };
 		1C5BB6F82ABAEACD0033B6C8 /* TaskGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroupViewController.swift; sourceTree = "<group>"; };
 		1C5BB6FC2ABAEB700033B6C8 /* TaskGroupViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroupViewCoordinator.swift; sourceTree = "<group>"; };
+		1C5BB6FE2ABB17BF0033B6C8 /* NavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				1C5BB6ED2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift */,
+				1C5BB6FE2ABB17BF0033B6C8 /* NavigationCell.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				1C465C632AB5ACAB00B27748 /* NavigationBarHStackView.swift in Sources */,
 				1C56ABC52AB41D260040B789 /* UIViewControllerConfigurable.swift in Sources */,
 				1C5BB6F92ABAEACD0033B6C8 /* TaskGroupViewController.swift in Sources */,
+				1C5BB6FF2ABB17BF0033B6C8 /* NavigationCell.swift in Sources */,
 				1C5BB6EE2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift in Sources */,
 				1C56ABD82AB4AA060040B789 /* UserFollowInfoHStackView.swift in Sources */,
 			);
