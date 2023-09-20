@@ -34,6 +34,7 @@
 		1C5BB6E92AB948ED0033B6C8 /* HomeViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6E82AB948ED0033B6C8 /* HomeViewCoordinator.swift */; };
 		1C5BB6EE2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6ED2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift */; };
 		1C5BB6F92ABAEACD0033B6C8 /* TaskGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6F82ABAEACD0033B6C8 /* TaskGroupViewController.swift */; };
+		1C5BB6FD2ABAEB700033B6C8 /* TaskGroupViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6FC2ABAEB700033B6C8 /* TaskGroupViewCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		1C5BB6E82AB948ED0033B6C8 /* HomeViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCoordinator.swift; sourceTree = "<group>"; };
 		1C5BB6ED2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAAnimationGradientLayer.swift; sourceTree = "<group>"; };
 		1C5BB6F82ABAEACD0033B6C8 /* TaskGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroupViewController.swift; sourceTree = "<group>"; };
+		1C5BB6FC2ABAEB700033B6C8 /* TaskGroupViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroupViewCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				1C5BB6F82ABAEACD0033B6C8 /* TaskGroupViewController.swift */,
+				1C5BB6FC2ABAEB700033B6C8 /* TaskGroupViewCoordinator.swift */,
 			);
 			path = TaskGroup;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C5BB6E92AB948ED0033B6C8 /* HomeViewCoordinator.swift in Sources */,
+				1C5BB6FD2ABAEB700033B6C8 /* TaskGroupViewCoordinator.swift in Sources */,
 				1C56ABAF2AB2E0700040B789 /* StringLiterals.swift in Sources */,
 				1C56AB8A2AB2A4010040B789 /* AppDelegate.swift in Sources */,
 				1C56ABAA2AB2CFD80040B789 /* CoreTodo.xcdatamodeld in Sources */,
