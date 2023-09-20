@@ -33,6 +33,7 @@
 		1C5BB6E72AB948510033B6C8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6E62AB948510033B6C8 /* HomeViewController.swift */; };
 		1C5BB6E92AB948ED0033B6C8 /* HomeViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6E82AB948ED0033B6C8 /* HomeViewCoordinator.swift */; };
 		1C5BB6EE2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6ED2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift */; };
+		1C5BB6F92ABAEACD0033B6C8 /* TaskGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6F82ABAEACD0033B6C8 /* TaskGroupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		1C5BB6E62AB948510033B6C8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1C5BB6E82AB948ED0033B6C8 /* HomeViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCoordinator.swift; sourceTree = "<group>"; };
 		1C5BB6ED2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAAnimationGradientLayer.swift; sourceTree = "<group>"; };
+		1C5BB6F82ABAEACD0033B6C8 /* TaskGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 		1C56AB9A2AB2A7B30040B789 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				1C5BB6F72ABAEA9B0033B6C8 /* TaskGroup */,
 				1C5BB6E52AB948410033B6C8 /* Home */,
 				1C56ABC62AB449DD0040B789 /* IGProfileDesignView */,
 			);
@@ -270,6 +273,14 @@
 				1C5BB6ED2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		1C5BB6F72ABAEA9B0033B6C8 /* TaskGroup */ = {
+			isa = PBXGroup;
+			children = (
+				1C5BB6F82ABAEACD0033B6C8 /* TaskGroupViewController.swift */,
+			);
+			path = TaskGroup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,6 +462,7 @@
 				1C56AB9E2AB2A8940040B789 /* IGProfileDesignViewController.swift in Sources */,
 				1C465C632AB5ACAB00B27748 /* NavigationBarHStackView.swift in Sources */,
 				1C56ABC52AB41D260040B789 /* UIViewControllerConfigurable.swift in Sources */,
+				1C5BB6F92ABAEACD0033B6C8 /* TaskGroupViewController.swift in Sources */,
 				1C5BB6EE2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift in Sources */,
 				1C56ABD82AB4AA060040B789 /* UserFollowInfoHStackView.swift in Sources */,
 			);
