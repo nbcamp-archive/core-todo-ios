@@ -41,6 +41,8 @@
 		1C5BB7052ABBF2380033B6C8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB7042ABBF2380033B6C8 /* CoreDataManager.swift */; };
 		1C5BB70A2ABC493B0033B6C8 /* IGProfileDesignViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB7092ABC493B0033B6C8 /* IGProfileDesignViewCoordinator.swift */; };
 		1C5BB70C2ABC61E90033B6C8 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB70B2ABC61E90033B6C8 /* PhotoCell.swift */; };
+		1C5BB7132ABC6A5D0033B6C8 /* CompleteGroupViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB7122ABC6A5D0033B6C8 /* CompleteGroupViewCoordinator.swift */; };
+		1C5BB7152ABC6A860033B6C8 /* CompleteGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB7142ABC6A860033B6C8 /* CompleteGroupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		1C5BB7042ABBF2380033B6C8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		1C5BB7092ABC493B0033B6C8 /* IGProfileDesignViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGProfileDesignViewCoordinator.swift; sourceTree = "<group>"; };
 		1C5BB70B2ABC61E90033B6C8 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		1C5BB7122ABC6A5D0033B6C8 /* CompleteGroupViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteGroupViewCoordinator.swift; sourceTree = "<group>"; };
+		1C5BB7142ABC6A860033B6C8 /* CompleteGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteGroupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +201,7 @@
 		1C56AB9A2AB2A7B30040B789 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				1C5BB7112ABC6A480033B6C8 /* CompleteGroup */,
 				1C5BB6F72ABAEA9B0033B6C8 /* TaskGroup */,
 				1C5BB6E52AB948410033B6C8 /* Home */,
 				1C56ABC62AB449DD0040B789 /* IGProfileDesignView */,
@@ -342,6 +347,15 @@
 				1C5BB6F82ABAEACD0033B6C8 /* TaskGroupViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1C5BB7112ABC6A480033B6C8 /* CompleteGroup */ = {
+			isa = PBXGroup;
+			children = (
+				1C5BB7122ABC6A5D0033B6C8 /* CompleteGroupViewCoordinator.swift */,
+				1C5BB7142ABC6A860033B6C8 /* CompleteGroupViewController.swift */,
+			);
+			path = CompleteGroup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,6 +526,7 @@
 				1C56AB8A2AB2A4010040B789 /* AppDelegate.swift in Sources */,
 				1C56ABAA2AB2CFD80040B789 /* CoreTodo.xcdatamodeld in Sources */,
 				1C5BB6E72AB948510033B6C8 /* HomeViewController.swift in Sources */,
+				1C5BB7152ABC6A860033B6C8 /* CompleteGroupViewController.swift in Sources */,
 				1C56AB8E2AB2A6520040B789 /* Coordinator.swift in Sources */,
 				1C5BB6E42AB937220033B6C8 /* AppCoordinator.swift in Sources */,
 				1C56ABDC2AB4AAB00040B789 /* UserInfoVStackView.swift in Sources */,
@@ -528,6 +543,7 @@
 				1C5BB7052ABBF2380033B6C8 /* CoreDataManager.swift in Sources */,
 				1C5BB70A2ABC493B0033B6C8 /* IGProfileDesignViewCoordinator.swift in Sources */,
 				1C56ABC52AB41D260040B789 /* UIViewControllerConfigurable.swift in Sources */,
+				1C5BB7132ABC6A5D0033B6C8 /* CompleteGroupViewCoordinator.swift in Sources */,
 				1C5BB6F92ABAEACD0033B6C8 /* TaskGroupViewController.swift in Sources */,
 				1C5BB6FF2ABB17BF0033B6C8 /* NavigationCell.swift in Sources */,
 				1C5BB6EE2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift in Sources */,
