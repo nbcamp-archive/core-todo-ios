@@ -13,6 +13,8 @@ class IGProfileDesignViewCoordinator: Coordinator {
     
     var childCoordinators: [Coordinator]
     
+    weak var parentCoordinator: HomeViewCoordinator?
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.childCoordinators = [Coordinator]()
@@ -27,5 +29,9 @@ class IGProfileDesignViewCoordinator: Coordinator {
         navigationController.navigationBar.tintColor = .black
         navigationController.pushViewController(viewController, animated: false)
     }
-
+    
+    func finish() {
+        parentCoordinator?.childCoordinatorDidFinish(self)
+    }
+    
 }

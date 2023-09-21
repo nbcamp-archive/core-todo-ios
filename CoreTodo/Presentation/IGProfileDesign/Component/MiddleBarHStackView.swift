@@ -10,6 +10,7 @@ import Then
 import UIKit
 
 final class MiddleBarHStackView: UIStackView {
+    
     private lazy var followFillButton: UIButton = .init(type: .system).then({
         $0.layer.cornerRadius = CGFloat(8)
         $0.clipsToBounds = true
@@ -33,6 +34,7 @@ final class MiddleBarHStackView: UIStackView {
     private lazy var findUserFillButton: UIButton = .init(type: .system).then({
         $0.layer.cornerRadius = CGFloat(8)
         $0.clipsToBounds = true
+        $0.tintColor = .black
         $0.backgroundColor = .systemGray6
         $0.setImage(UIImage(systemName: "person.badge.plus"), for: .normal)
     })
@@ -46,14 +48,15 @@ final class MiddleBarHStackView: UIStackView {
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
 extension MiddleBarHStackView: UIStackViewConfigurable {
+    
     func configure() {
         self.axis = .horizontal
         self.spacing = CGFloat(4)
         self.alignment = .leading
-        self.backgroundColor = .red
         addArrangedSubviews([followFillButton, messageFillButton, findUserFillButton])
         setLayout()
     }
@@ -73,4 +76,5 @@ extension MiddleBarHStackView: UIStackViewConfigurable {
             constraint.leading.equalTo(messageFillButton.snp.trailing).offset(4)
         })
     }
+    
 }

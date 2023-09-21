@@ -9,18 +9,21 @@ import SnapKit
 import Then
 import UIKit
 
-final class IGProfileDesignViewController: UIViewController {
-    private lazy var usernameLabel: UILabel = .init().then({
-        $0.text = StringLiterals.kUserName
-        $0.textAlignment = .center
-        $0.font = UIFont.boldSystemFont(ofSize: 16)
-    })
+class IGProfileDesignViewController: UIViewController {
     
-    private lazy var menu: UIImageView = .init().then({
-        $0.frame = .zero
-        $0.clipsToBounds = true
-        $0.image = UIImage(named: "Three_Dots_Image")
-        $0.contentMode = .scaleAspectFit
+    weak var coordinator: IGProfileDesignViewCoordinator?
+    
+    private lazy var userFollowInfoVStackView = UserFollowInfoHStackView()
+    
+    private lazy var userInfoVStackView = UserInfoVStackView()
+    
+    private lazy var middleBarHorizontalStackView = MiddleBarHStackView()
+    
+    private lazy var navigationBarHStackView = NavigationBarHStackView()
+    
+    private lazy var menuButtonItem = UIBarButtonItem().then({
+        $0.image = UIImage(systemName: "ellipsis")
+        $0.isEnabled = false
     })
     
     private lazy var userPicture: UIImageView = .init().then({
@@ -30,14 +33,6 @@ final class IGProfileDesignViewController: UIViewController {
         $0.image = UIImage(named: "MyongE_Skrr_Image")
         $0.contentMode = .scaleAspectFit
     })
-    
-    private lazy var userFollowInfoVStackView = UserFollowInfoHStackView()
-    
-    private lazy var userInfoVStackView = UserInfoVStackView()
-    
-    private lazy var middleBarHorizontalStackView = MiddleBarHStackView()
-    
-    private lazy var navigationBarHStackView = NavigationBarHStackView()
     
     private lazy var photoCollectionViewFlowLayout: UICollectionViewFlowLayout = .init().then({
         $0.minimumLineSpacing = CGFloat(2)
@@ -53,17 +48,26 @@ final class IGProfileDesignViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = StringLiterals.kUserName
+        navigationItem.rightBarButtonItem = menuButtonItem
         setUI()
         setLayout()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if isMovingFromParent {
+            coordinator?.finish()
+        }
     }
 }
 
 extension IGProfileDesignViewController: UIViewControllerConfigurable {
+    
     func setUI() {
         view.backgroundColor = .white
         view.addSubviews([
-            usernameLabel,
-            menu,
             userPicture,
             userFollowInfoVStackView,
             userInfoVStackView,
@@ -74,27 +78,14 @@ extension IGProfileDesignViewController: UIViewControllerConfigurable {
     }
     
     func setLayout() {
-        usernameLabel.snp.makeConstraints({ constraint in
-            constraint.top.equalToSuperview()
-            constraint.centerX.equalToSuperview()
-            constraint.height.equalTo(30)
-        })
-        menu.snp.makeConstraints({ constraint in
-            constraint.top.equalToSuperview()
-            constraint.trailingMargin.equalToSuperview()
-            constraint.width.equalTo(60)
-            constraint.height.equalTo(30)
-            constraint.leading.equalTo(usernameLabel.snp.trailing).offset(20)
-        })
         userPicture.snp.makeConstraints({ constraint in
-            constraint.top.equalTo(usernameLabel.snp.bottom)
-            constraint.leadingMargin.equalToSuperview()
+            constraint.top.equalTo(view.safeAreaLayoutGuide).offset(16)
+            constraint.leading.equalToSuperview().offset(16)
             constraint.width.height.equalTo(88)
-            constraint.bottomMargin.equalTo(userInfoVStackView.snp.topMargin).offset(-40)
         })
         userFollowInfoVStackView.snp.makeConstraints({ constraint in
-            constraint.top.equalTo(usernameLabel.snp.bottom)
-            constraint.leadingMargin.equalTo(userPicture.snp.trailingMargin).offset(60)
+            constraint.top.equalTo(userPicture)
+            constraint.leading.equalTo(userPicture.snp.trailing).offset(60)
             constraint.trailingMargin.equalToSuperview().offset(-28)
             constraint.height.equalTo(88)
         })
@@ -115,65 +106,38 @@ extension IGProfileDesignViewController: UIViewControllerConfigurable {
         photoCollectionView.snp.makeConstraints({ constraint in
             constraint.top.equalTo(navigationBarHStackView.snp.bottom)
             constraint.leading.trailing.equalToSuperview()
-            constraint.bottom.equalToSuperview()
+            constraint.bottom.equalTo(view.safeAreaLayoutGuide)
         })
     }
     
     func setDelegate() {}
     
     func addTarget() {}
+    
 }
 
 extension IGProfileDesignViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 12
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCell.reuseIdentifier, for: indexPath)
-        cell.backgroundColor=UIColor.gray
+        cell.backgroundColor = UIColor.gray
         
         return cell
     }
+    
 }
 
 extension IGProfileDesignViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (view.frame.size.width - 8) / 3
         let height = width
         
         return CGSize(width: width, height: height)
     }
-}
-
-class PhotoCell: UICollectionViewCell {
-    static let reuseIdentifier = "PhotoCell"
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.backgroundColor = .gray
-    }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
 }
-
-#if DEBUG && canImport(SwiftUI)
-import SwiftUI
-private struct UIViewControllerRepresenter: UIViewControllerRepresentable {
-    let viewController: UIViewController
-    
-    func makeUIViewController(context: Context) -> UIViewController {
-        return viewController
-    }
-    
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
-}
-
-struct UIViewControllerPreviewView: PreviewProvider {
-    static var previews: some View {
-        let viewController = IGProfileDesignViewController()
-        return UIViewControllerRepresenter(viewController: viewController)
-    }
-}
-#endif

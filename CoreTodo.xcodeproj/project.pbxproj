@@ -204,7 +204,7 @@
 				1C5BB7112ABC6A480033B6C8 /* CompleteGroup */,
 				1C5BB6F72ABAEA9B0033B6C8 /* TaskGroup */,
 				1C5BB6E52AB948410033B6C8 /* Home */,
-				1C56ABC62AB449DD0040B789 /* IGProfileDesignView */,
+				1C56ABC62AB449DD0040B789 /* IGProfileDesign */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -249,14 +249,14 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		1C56ABC62AB449DD0040B789 /* IGProfileDesignView */ = {
+		1C56ABC62AB449DD0040B789 /* IGProfileDesign */ = {
 			isa = PBXGroup;
 			children = (
 				1C5BB7082ABC49300033B6C8 /* Coordinator */,
 				1C56ABD22AB4564D0040B789 /* Component */,
 				1C56ABD12AB455FF0040B789 /* View */,
 			);
-			path = IGProfileDesignView;
+			path = IGProfileDesign;
 			sourceTree = "<group>";
 		};
 		1C56ABD12AB455FF0040B789 /* View */ = {
