@@ -9,7 +9,7 @@ import SnapKit
 import Then
 import UIKit
 
-final class MiddleBarHorizontalStackView: UIStackView {
+final class MiddleBarHStackView: UIStackView {
     private lazy var followFillButton: UIButton = .init(type: .system).then({
         $0.layer.cornerRadius = CGFloat(8)
         $0.clipsToBounds = true
@@ -48,7 +48,7 @@ final class MiddleBarHorizontalStackView: UIStackView {
     }
 }
 
-extension MiddleBarHorizontalStackView: UIStackViewConfigurable {
+extension MiddleBarHStackView: UIStackViewConfigurable {
     func configure() {
         self.axis = .horizontal
         self.spacing = CGFloat(4)

@@ -26,7 +26,7 @@
 		1C56ABCA2AB44A840040B789 /* UIStackViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABC92AB44A840040B789 /* UIStackViewConfigurable.swift */; };
 		1C56ABCE2AB44E4A0040B789 /* UIStackView+AddArrangedSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABCD2AB44E4A0040B789 /* UIStackView+AddArrangedSubviews.swift */; };
 		1C56ABD02AB454D80040B789 /* UIView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABCF2AB454D80040B789 /* UIView+AddSubviews.swift */; };
-		1C56ABD62AB456B70040B789 /* MiddleBarHorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABD52AB456B70040B789 /* MiddleBarHorizontalStackView.swift */; };
+		1C56ABD62AB456B70040B789 /* MiddleBarHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABD52AB456B70040B789 /* MiddleBarHStackView.swift */; };
 		1C56ABD82AB4AA060040B789 /* UserFollowInfoHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABD72AB4AA060040B789 /* UserFollowInfoHStackView.swift */; };
 		1C56ABDC2AB4AAB00040B789 /* UserInfoVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C56ABDB2AB4AAB00040B789 /* UserInfoVStackView.swift */; };
 		1C5BB6E42AB937220033B6C8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6E32AB937220033B6C8 /* AppCoordinator.swift */; };
@@ -80,7 +80,7 @@
 		1C56ABC92AB44A840040B789 /* UIStackViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewConfigurable.swift; sourceTree = "<group>"; };
 		1C56ABCD2AB44E4A0040B789 /* UIStackView+AddArrangedSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+AddArrangedSubviews.swift"; sourceTree = "<group>"; };
 		1C56ABCF2AB454D80040B789 /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
-		1C56ABD52AB456B70040B789 /* MiddleBarHorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleBarHorizontalStackView.swift; sourceTree = "<group>"; };
+		1C56ABD52AB456B70040B789 /* MiddleBarHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleBarHStackView.swift; sourceTree = "<group>"; };
 		1C56ABD72AB4AA060040B789 /* UserFollowInfoHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowInfoHStackView.swift; sourceTree = "<group>"; };
 		1C56ABDB2AB4AAB00040B789 /* UserInfoVStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVStackView.swift; sourceTree = "<group>"; };
 		1C5BB6E32AB937220033B6C8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -260,7 +260,7 @@
 		1C56ABD22AB4564D0040B789 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				1C56ABD52AB456B70040B789 /* MiddleBarHorizontalStackView.swift */,
+				1C56ABD52AB456B70040B789 /* MiddleBarHStackView.swift */,
 				1C56ABD72AB4AA060040B789 /* UserFollowInfoHStackView.swift */,
 				1C56ABDB2AB4AAB00040B789 /* UserInfoVStackView.swift */,
 				1C465C622AB5ACAB00B27748 /* NavigationBarHStackView.swift */,
@@ -490,7 +490,7 @@
 				1C56ABCE2AB44E4A0040B789 /* UIStackView+AddArrangedSubviews.swift in Sources */,
 				1C56ABBF2AB41A6A0040B789 /* UIColor+Hexadecimal.swift in Sources */,
 				1C5BB7032ABBF1B20033B6C8 /* TaskViewModel.swift in Sources */,
-				1C56ABD62AB456B70040B789 /* MiddleBarHorizontalStackView.swift in Sources */,
+				1C56ABD62AB456B70040B789 /* MiddleBarHStackView.swift in Sources */,
 				1C56AB8B2AB2A4010040B789 /* SceneDelegate.swift in Sources */,
 				1C56AB9E2AB2A8940040B789 /* IGProfileDesignViewController.swift in Sources */,
 				1C465C632AB5ACAB00B27748 /* NavigationBarHStackView.swift in Sources */,

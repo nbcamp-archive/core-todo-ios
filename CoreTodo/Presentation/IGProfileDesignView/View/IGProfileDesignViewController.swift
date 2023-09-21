@@ -35,7 +35,7 @@ final class IGProfileDesignViewController: UIViewController {
     
     private lazy var userInfoVStackView = UserInfoVStackView()
     
-    private lazy var middleBarHorizontalStackView = MiddleBarHorizontalStackView()
+    private lazy var middleBarHorizontalStackView = MiddleBarHStackView()
     
     private lazy var navigationBarHStackView = NavigationBarHStackView()
     
