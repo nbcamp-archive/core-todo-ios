@@ -36,6 +36,9 @@
 		1C5BB6F92ABAEACD0033B6C8 /* TaskGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6F82ABAEACD0033B6C8 /* TaskGroupViewController.swift */; };
 		1C5BB6FD2ABAEB700033B6C8 /* TaskGroupViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6FC2ABAEB700033B6C8 /* TaskGroupViewCoordinator.swift */; };
 		1C5BB6FF2ABB17BF0033B6C8 /* NavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB6FE2ABB17BF0033B6C8 /* NavigationCell.swift */; };
+		1C5BB7012ABB5BB90033B6C8 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB7002ABB5BB90033B6C8 /* TaskCell.swift */; };
+		1C5BB7032ABBF1B20033B6C8 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB7022ABBF1B20033B6C8 /* TaskViewModel.swift */; };
+		1C5BB7052ABBF2380033B6C8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB7042ABBF2380033B6C8 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		1C5BB6F82ABAEACD0033B6C8 /* TaskGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroupViewController.swift; sourceTree = "<group>"; };
 		1C5BB6FC2ABAEB700033B6C8 /* TaskGroupViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroupViewCoordinator.swift; sourceTree = "<group>"; };
 		1C5BB6FE2ABB17BF0033B6C8 /* NavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCell.swift; sourceTree = "<group>"; };
+		1C5BB7002ABB5BB90033B6C8 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		1C5BB7022ABBF1B20033B6C8 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		1C5BB7042ABBF2380033B6C8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				1C56ABAE2AB2E0700040B789 /* StringLiterals.swift */,
+				1C5BB7042ABBF2380033B6C8 /* CoreDataManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -283,10 +290,28 @@
 		1C5BB6F72ABAEA9B0033B6C8 /* TaskGroup */ = {
 			isa = PBXGroup;
 			children = (
+				1C5BB7072ABC47B90033B6C8 /* Component */,
+				1C5BB7062ABC479D0033B6C8 /* ViewModel */,
 				1C5BB6F82ABAEACD0033B6C8 /* TaskGroupViewController.swift */,
 				1C5BB6FC2ABAEB700033B6C8 /* TaskGroupViewCoordinator.swift */,
 			);
 			path = TaskGroup;
+			sourceTree = "<group>";
+		};
+		1C5BB7062ABC479D0033B6C8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1C5BB7022ABBF1B20033B6C8 /* TaskViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1C5BB7072ABC47B90033B6C8 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				1C5BB7002ABB5BB90033B6C8 /* TaskCell.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,14 +489,17 @@
 				1C56ABCA2AB44A840040B789 /* UIStackViewConfigurable.swift in Sources */,
 				1C56ABCE2AB44E4A0040B789 /* UIStackView+AddArrangedSubviews.swift in Sources */,
 				1C56ABBF2AB41A6A0040B789 /* UIColor+Hexadecimal.swift in Sources */,
+				1C5BB7032ABBF1B20033B6C8 /* TaskViewModel.swift in Sources */,
 				1C56ABD62AB456B70040B789 /* MiddleBarHorizontalStackView.swift in Sources */,
 				1C56AB8B2AB2A4010040B789 /* SceneDelegate.swift in Sources */,
 				1C56AB9E2AB2A8940040B789 /* IGProfileDesignViewController.swift in Sources */,
 				1C465C632AB5ACAB00B27748 /* NavigationBarHStackView.swift in Sources */,
+				1C5BB7052ABBF2380033B6C8 /* CoreDataManager.swift in Sources */,
 				1C56ABC52AB41D260040B789 /* UIViewControllerConfigurable.swift in Sources */,
 				1C5BB6F92ABAEACD0033B6C8 /* TaskGroupViewController.swift in Sources */,
 				1C5BB6FF2ABB17BF0033B6C8 /* NavigationCell.swift in Sources */,
 				1C5BB6EE2AB9B86C0033B6C8 /* CAAnimationGradientLayer.swift in Sources */,
+				1C5BB7012ABB5BB90033B6C8 /* TaskCell.swift in Sources */,
 				1C56ABD82AB4AA060040B789 /* UserFollowInfoHStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
