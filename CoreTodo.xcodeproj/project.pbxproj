@@ -296,10 +296,10 @@
 		1C5BB6F72ABAEA9B0033B6C8 /* TaskGroup */ = {
 			isa = PBXGroup;
 			children = (
+				1C5BB7102ABC68520033B6C8 /* View */,
+				1C5BB70F2ABC68170033B6C8 /* Coordinator */,
 				1C5BB7072ABC47B90033B6C8 /* Component */,
 				1C5BB7062ABC479D0033B6C8 /* ViewModel */,
-				1C5BB6F82ABAEACD0033B6C8 /* TaskGroupViewController.swift */,
-				1C5BB6FC2ABAEB700033B6C8 /* TaskGroupViewCoordinator.swift */,
 			);
 			path = TaskGroup;
 			sourceTree = "<group>";
@@ -326,6 +326,22 @@
 				1C5BB7092ABC493B0033B6C8 /* IGProfileDesignViewCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1C5BB70F2ABC68170033B6C8 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1C5BB6FC2ABAEB700033B6C8 /* TaskGroupViewCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1C5BB7102ABC68520033B6C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1C5BB6F82ABAEACD0033B6C8 /* TaskGroupViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

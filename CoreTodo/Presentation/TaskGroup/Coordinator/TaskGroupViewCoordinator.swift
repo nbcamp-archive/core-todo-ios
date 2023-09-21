@@ -8,6 +8,7 @@
 import UIKit
 
 class TaskGroupViewCoordinator: Coordinator {
+    
     var navigationController: UINavigationController
     
     var childCoordinators: [Coordinator]
@@ -20,7 +21,19 @@ class TaskGroupViewCoordinator: Coordinator {
     func start() {
         let viewController = TaskGroupViewController()
         viewController.coordinator = self
+        
+        let coreDataManager = CoreDataManager.shared
+        let viewModel = TaskViewModel(coreDataManager: coreDataManager)
+        viewController.taskViewModel = viewModel
+        
         navigationController.isNavigationBarHidden = false
+        navigationController.isToolbarHidden = false
         navigationController.pushViewController(viewController, animated: true)
     }
+    
+    func finish() {
+        let parentCoordinator = HomeViewCoordinator(navigationController: navigationController)
+        parentCoordinator.childCoordinatorDidFinish(self)
+    }
+    
 }
