@@ -39,6 +39,7 @@
 		1C5BB7012ABB5BB90033B6C8 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB7002ABB5BB90033B6C8 /* TaskCell.swift */; };
 		1C5BB7032ABBF1B20033B6C8 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB7022ABBF1B20033B6C8 /* TaskViewModel.swift */; };
 		1C5BB7052ABBF2380033B6C8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB7042ABBF2380033B6C8 /* CoreDataManager.swift */; };
+		1C5BB70A2ABC493B0033B6C8 /* IGProfileDesignViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BB7092ABC493B0033B6C8 /* IGProfileDesignViewCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		1C5BB7002ABB5BB90033B6C8 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		1C5BB7022ABBF1B20033B6C8 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		1C5BB7042ABBF2380033B6C8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		1C5BB7092ABC493B0033B6C8 /* IGProfileDesignViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGProfileDesignViewCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 		1C56ABC62AB449DD0040B789 /* IGProfileDesignView */ = {
 			isa = PBXGroup;
 			children = (
+				1C5BB7082ABC49300033B6C8 /* Coordinator */,
 				1C56ABD22AB4564D0040B789 /* Component */,
 				1C56ABD12AB455FF0040B789 /* View */,
 			);
@@ -312,6 +315,14 @@
 				1C5BB7002ABB5BB90033B6C8 /* TaskCell.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		1C5BB7082ABC49300033B6C8 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1C5BB7092ABC493B0033B6C8 /* IGProfileDesignViewCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -495,6 +506,7 @@
 				1C56AB9E2AB2A8940040B789 /* IGProfileDesignViewController.swift in Sources */,
 				1C465C632AB5ACAB00B27748 /* NavigationBarHStackView.swift in Sources */,
 				1C5BB7052ABBF2380033B6C8 /* CoreDataManager.swift in Sources */,
+				1C5BB70A2ABC493B0033B6C8 /* IGProfileDesignViewCoordinator.swift in Sources */,
 				1C56ABC52AB41D260040B789 /* UIViewControllerConfigurable.swift in Sources */,
 				1C5BB6F92ABAEACD0033B6C8 /* TaskGroupViewController.swift in Sources */,
 				1C5BB6FF2ABB17BF0033B6C8 /* NavigationCell.swift in Sources */,
