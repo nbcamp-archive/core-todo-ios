@@ -27,10 +27,10 @@ class IGProfileDesignViewCoordinator: Coordinator {
         navigationController.isNavigationBarHidden = false
         navigationController.navigationBar.prefersLargeTitles = false
         navigationController.navigationBar.tintColor = .black
-        navigationController.pushViewController(viewController, animated: false)
+        navigationController.pushViewController(viewController, animated: true)
     }
     
-    func finish() {
+    func end() {
         parentCoordinator?.childCoordinatorDidFinish(self)
     }
     
