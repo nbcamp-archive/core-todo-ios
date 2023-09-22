@@ -9,9 +9,15 @@ import SnapKit
 import Then
 import UIKit
 
+protocol TaskCellDelegate: AnyObject {
+    func didToggleCheckboxButton(_ cell: TaskCell)
+}
+
 class TaskCell: UITableViewCell {
     
     static let reuseIdentifier = "TaskCell"
+    
+    var delegate: TaskCellDelegate?
     
     private lazy var checkboxButton = UIButton().then({
         $0.setImage(UIImage(systemName: "circle"), for: .normal)
@@ -44,6 +50,7 @@ class TaskCell: UITableViewCell {
     
     func configure(with task: Task) {
         titleLabel.text = task.title
+        
         if let createDate = task.createDate {
             createDateLabel.text = "\(createDate)"
         } else {
@@ -80,6 +87,7 @@ extension TaskCell {
     @objc
     private func checkboxButtonTapped(_ button: UIButton) {
         checkboxButton.isSelected.toggle()
+        delegate?.didToggleCheckboxButton(self)
     }
     
 }
