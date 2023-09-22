@@ -18,6 +18,7 @@ class TaskViewModel {
     
     func createTask(title: String) {
         let task = Task(context: coreDataManager.context)
+        
         task.id = UUID()
         task.modifyDate = Date()
         task.createDate = Date()
@@ -37,6 +38,10 @@ class TaskViewModel {
         }
     }
     
+    func updateTask(_ task: Task) {
+        coreDataManager.saveContext()
+    }
+    
     func loadTask() -> [Task] {
         let request: NSFetchRequest<Task> = Task.fetchRequest()
         
@@ -46,6 +51,11 @@ class TaskViewModel {
             print("Failed to fetch task: \(error)")
             return []
         }
+    }
+    
+    func loadCompletedTask() -> [Task] {
+        let tasks = loadTask()
+        return tasks.filter { $0.isCompleted }
     }
     
     func numberOfTask() -> Int {
@@ -58,4 +68,5 @@ class TaskViewModel {
             return 0
         }
     }
+    
 }
