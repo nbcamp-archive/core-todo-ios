@@ -4,10 +4,10 @@
 LINT=$(which swiftlint)
 
 if [[ -e "${LINT}" ]]; then
-	echo "SwiftLint를 시작합니다."
+	echo "Hook: SwiftLint 검사를 시작합니다."
 else
-	echo "SwiftLint가 존재하지 않습니다. 자동으로 설치를 시도합니다."
-	brew install swiftlint
+	echo "Hook: SwiftLint가 존재하지 않습니다. 자동으로 설치를 시도합니다."
+	$(brew install swiftlint)
 	if [[ $? != 0 ]]; then
 		echo "SwiftLint 설치에 실패했습니다. Homebrew가 설치되어 있는지 확인하세요."
 		echo "$(brew install swiftlint) 명령어를 통해 수동으로 설치해주세요."
@@ -20,44 +20,52 @@ FILES=$(git diff --stat --cached)
 TARGETS=$(git diff --stat --cached --diff-filter=d --name-only $(git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)) | grep -F ".swift")
 
 if [ -n "$FILES" -a -z "$TARGETS" ]; then
-	printf "No Swift Files Changed"
+	printf "변경된 파일이 없습니다."
 	exit 0
 
 elif [ -z "${FILES}" ]; then
-	printf "No Files Changed"
-	printf "\n $(git add) 명령어를 먼저 진행해주세요."
+	printf "변경된 파일을 찾을 수 없습니다."
+	printf "\n 'git add' 명령어를 먼저 진행해주세요."
 	exit 1
 
 elif [ -z "${TARGETS}" ]; then
-	printf "No Swift Files Changed"
-	printf "\n $(git add) 명령어를 먼저 진행해주세요."
+	printf "변경된 Swift 파일을 찾을 수 없습니다."
+	printf "\n 'git add' 명령어를 먼저 진행해주세요."
 	exit 1
 fi
 
-# swiftlint apply custom rules
+# swiftlint apply custom rules to only staged files
 RESULTS=$($LINT lint --quiet --config .swiftlint.yml)
-
-if [ "$RESULTS" == ""]; then
-	printf "SwiftLint: No Warnings\n"
+STAGED_FILES=$(git diff --cached --name-only | grep ".swift$")
+if [[ "$STAGED_FILES" = "" ]]; then 
+    printf "변경된 Swift 파일이 없습니다."
+    exit 0
+else 
+    for FILE in $STAGED_FILES; do
+        RESULTS=$($LINT lint --quiet "$FILE" --config .swiftlint.yml)
+    done
+fi
+if [ "$RESULTS" == "" ]; then
+	printf "Hook: SwiftLint 검사를 통과했습니다.\n"
 	exit 0
 else
 	echo ""
-	printf "SwiftLint 검사를 통과하지 못했습니다. 아래 내용을 확인해주세요.\n"
+	printf "Hook: SwiftLint 검사 결과입니다. 아래 내용을 확인해주세요.\n"
 	echo "$RESULTS" | while read -r line; do
-		FILEPATH=$(echo "$line" | cut -d : -f 1)                # line 변수에 저장된 문자열 중 : 기준으로 첫번째 문자열을 저장(파일 경로)
-		L=$(echo "$line" | cut -d : -f 2)                       # line 변수에 저장된 문자열 중 : 기준으로 두번째 문자열을 저장(행 번호)
-		C=$(echo "$line" | cut -d : -f 3)                       # line 변수에 저장된 문자열 중 : 기준으로 세번째 문자열을 저장(열 번호)
-		TYPE=$(echo "$line" | cut -d : -f 4 | cut -c 2-)        # line 변수에 저장된 문자열 중 : 기준으로 네번째 문자열을 저장(타입)
-		MESSAGE=$(echo "$line" | cut -d : -f 5 | cut -c 2-)     # line 변수에 저장된 문자열 중 : 기준으로 다섯번째 문자열을 저장(메시지)
-		DESCRIPTION=$(echo "$line" | cut -d : -f 6 | cut -c 2-) # line 변수에 저장된 문자열 중 : 기준으로 여섯번째 문자열을 저장(설명)
-		if [ $TYPE == "warning" ]; then
+		FILEPATH=$(echo "$line" | cut -d : -f 1)                # line 변수에 저장된 문자열 중 콜론 기준으로 첫번째 문자열을 저장(파일 경로)
+		L=$(echo "$line" | cut -d : -f 2)                       # line 변수에 저장된 문자열 중 콜론 기준으로 두번째 문자열을 저장(행 번호)
+		C=$(echo "$line" | cut -d : -f 3)                       # line 변수에 저장된 문자열 중 콜론 기준으로 세번째 문자열을 저장(열 번호)
+		TYPE=$(echo "$line" | cut -d : -f 4 | cut -c 2-)        # line 변수에 저장된 문자열 중 콜론 기준으로 네번째 문자열을 저장(타입)
+		MESSAGE=$(echo "$line" | cut -d : -f 5 | cut -c 2-)     # line 변수에 저장된 문자열 중 콜론 기준으로 다섯번째 문자열을 저장(메시지)
+		DESCRIPTION=$(echo "$line" | cut -d : -f 6 | cut -c 2-) # line 변수에 저장된 문자열 중 콜론 기준으로 여섯번째 문자열을 저장(설명)
+		if [ $TYPE = "warning" ]; then
 			printf "\033[0;33m$TYPE ⚠️\033[0m\n"
-		elif [ $TYPE == "error" ]; then
+		elif [ $TYPE = "error" ]; then
 			printf "\033[0;31m$TYPE ❌ \033[0m\n"
 		fi
 		printf "$FILEPATH:$L:$C\n"
 		printf "$MESSAGE: - $DESCRIPTION\n"
 	done
-	printf "\n 커밋을 진행할 수 없습니다. SwiftLint 검사를 통과해주세요.\n"
+	printf "\n Hook: SwiftLint 검사를 통과하지 못해 커밋을 진행할 수 없습니다.\n"
 	exit 1
 fi
