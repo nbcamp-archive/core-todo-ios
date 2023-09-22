@@ -13,6 +13,8 @@ class TaskGroupViewCoordinator: Coordinator {
     
     var childCoordinators: [Coordinator]
     
+    weak var parentCoordinator: HomeViewCoordinator?
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.childCoordinators = [Coordinator]()
@@ -24,16 +26,14 @@ class TaskGroupViewCoordinator: Coordinator {
         
         let coreDataManager = CoreDataManager.shared
         let viewModel = TaskViewModel(coreDataManager: coreDataManager)
-        viewController.taskViewModel = viewModel
+        viewController.viewModel = viewModel
         
         navigationController.isNavigationBarHidden = false
-        navigationController.isToolbarHidden = false
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func finish() {
-        let parentCoordinator = HomeViewCoordinator(navigationController: navigationController)
-        parentCoordinator.childCoordinatorDidFinish(self)
+    func end() {
+        parentCoordinator?.childCoordinatorDidFinish(self)
     }
     
 }

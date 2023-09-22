@@ -13,13 +13,15 @@ class TaskGroupViewController: UIViewController {
     
     weak var coordinator: TaskGroupViewCoordinator?
     
-    var taskViewModel: TaskViewModel?
+    var viewModel: TaskViewModel?
+    
+    private var tasks = [Task]()
     
     private lazy var textField = UITextField().then({
         $0.borderStyle = .none
     })
     
-    private lazy var createTaskButtonItem: UIBarButtonItem = .init().then({
+    private lazy var createTaskButtonItem = UIBarButtonItem().then({
         $0.image = UIImage(systemName: "square.and.pencil")
         $0.tintColor = UIColor(hex: "#141617")
         $0.style = .plain
@@ -29,7 +31,7 @@ class TaskGroupViewController: UIViewController {
     private lazy var numberLabel = UILabel().then({
         $0.text = "0개의 항목"
         $0.textColor = UIColor.systemGray
-        $0.font = UIFont.systemFont(ofSize: 10)
+        $0.font = UIFont.systemFont(ofSize: 12)
     })
     
     private lazy var tableView = UITableView().then({
@@ -45,6 +47,8 @@ class TaskGroupViewController: UIViewController {
         setLayout()
         setDelegate()
         addTarget()
+        
+        loadTask()
         updateNumberLabel()
     }
     
@@ -52,7 +56,7 @@ class TaskGroupViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         if isMovingFromParent {
-            coordinator?.finish()
+            coordinator?.end()
         }
     }
     
@@ -62,6 +66,7 @@ extension TaskGroupViewController: UIViewControllerConfigurable {
     
     func setUI() {
         navigationItem.rightBarButtonItem = createTaskButtonItem
+        
         view.addSubviews([tableView, numberLabel])
     }
     
@@ -92,15 +97,16 @@ extension TaskGroupViewController: UITableViewDelegate {
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
+        
         tableView.setEditing(editing, animated: true)
     }
     
 }
 
-extension TaskGroupViewController: UITableViewDataSource {
+extension TaskGroupViewController: UITableViewDataSource, TaskCellDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskViewModel?.numberOfTask() ?? 0
+        return viewModel?.numberOfTask() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -108,9 +114,12 @@ extension TaskGroupViewController: UITableViewDataSource {
             fatalError("Failed to dequeue a reusable cell.")
         }
         
-        let tasks = taskViewModel?.loadTask()
+        let tasks = viewModel?.loadTask()
         let task = tasks?[indexPath.row]
+        
+        cell.delegate = self
         cell.configure(with: task!)
+        
         return cell
     }
     
@@ -123,12 +132,30 @@ extension TaskGroupViewController: UITableViewDataSource {
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
+    func didToggleCheckboxButton(_ cell: TaskCell) {
+        if let indexPath = tableView.indexPath(for: cell) {
+            let task = tasks[indexPath.row]
+            task.isCompleted = true
+            
+            viewModel?.updateTask(task)
+            
+            loadTask()
+            tableView.reloadData()
+        }
+    }
+    
 }
 
 extension TaskGroupViewController {
     
+    private func loadTask() {
+        if let viewModel = viewModel {
+            tasks = viewModel.loadTask()
+        }
+    }
+    
     private func updateNumberLabel() {
-        if let number = taskViewModel?.numberOfTask() {
+        if let number = viewModel?.numberOfTask() {
             numberLabel.text = "\(number)개의 항목"
         } else {
             numberLabel.text = "0개의 항목"
@@ -136,7 +163,7 @@ extension TaskGroupViewController {
     }
     
     private func taskDidRemoving(at indexPath: IndexPath) {
-        taskViewModel?.deleteTask(at: indexPath.row)
+        viewModel?.deleteTask(at: indexPath.row)
         
         updateNumberLabel()
         
@@ -144,7 +171,7 @@ extension TaskGroupViewController {
     }
     
 }
-// MARK: - 커스텀 메서드
+
 extension TaskGroupViewController {
     
     @objc
@@ -158,7 +185,7 @@ extension TaskGroupViewController {
             guard let title = alertController.textFields?.first?.text, !title.isEmpty else {
                 return
             }
-            self?.taskViewModel?.createTask(title: title)
+            self?.viewModel?.createTask(title: title)
             self?.tableView.reloadData()
         }
         
