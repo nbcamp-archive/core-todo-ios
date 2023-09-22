@@ -26,7 +26,7 @@ class IGProfileDesignViewController: UIViewController {
         $0.isEnabled = false
     })
     
-    private lazy var userPicture: UIImageView = .init().then({
+    private lazy var userPicture = UIImageView().then({
         $0.frame = .zero
         $0.layer.cornerRadius = CGFloat(44.0)
         $0.clipsToBounds = true
@@ -34,7 +34,7 @@ class IGProfileDesignViewController: UIViewController {
         $0.contentMode = .scaleAspectFit
     })
     
-    private lazy var photoCollectionViewFlowLayout: UICollectionViewFlowLayout = .init().then({
+    private lazy var photoCollectionViewFlowLayout = UICollectionViewFlowLayout().then({
         $0.minimumLineSpacing = CGFloat(2)
         $0.minimumInteritemSpacing = CGFloat(2)
     })
@@ -58,7 +58,7 @@ class IGProfileDesignViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         if isMovingFromParent {
-            coordinator?.finish()
+            coordinator?.end()
         }
     }
 }
